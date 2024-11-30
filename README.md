@@ -1,4 +1,4 @@
-# Software Development Requirement Analysis
+![booking-system-pro-diagram](https://github.com/user-attachments/assets/da6a55cb-a029-4290-875b-3a9adec83e44)# Software Development Requirement Analysis
 
 ## Table of Contents
 1. [Purpose](#purpose)
@@ -159,6 +159,110 @@ FR-003: The system shall automatically log out users after 30 minutes of inactiv
    - System adaptability
 
 ## Use Case Diagrams
+![Uploading<svg viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="24" font-weight="bold">Booking System Architecture</text>
+  
+  <!-- External Systems -->
+  <rect x="50" y="100" width="200" height="100" rx="10" fill="none" stroke="#666" stroke-dasharray="5,5"/>
+  <text x="90" y="130" font-family="Arial" font-size="14" fill="#666">External Systems</text>
+  <rect x="70" y="150" width="160" height="30" fill="#f0f0f0" stroke="#666"/>
+  <text x="85" y="170" font-family="Arial" font-size="12">Payment Gateway</text>
+
+  <!-- Actors -->
+  <!-- Customer -->
+  <g id="customer">
+    <circle cx="100" cy="300" r="20" stroke="#333" fill="white" stroke-width="2"/>
+    <line x1="100" y1="320" x2="100" y2="380" stroke="#333" stroke-width="2"/>
+    <line x1="60" y1="350" x2="140" y2="350" stroke="#333" stroke-width="2"/>
+    <line x1="100" y1="380" x2="60" y2="420" stroke="#333" stroke-width="2"/>
+    <line x1="100" y1="380" x2="140" y2="420" stroke="#333" stroke-width="2"/>
+    <text x="70" y="450" font-family="Arial" font-size="14">Customer</text>
+  </g>
+
+  <!-- Admin -->
+  <g id="admin">
+    <circle cx="900" cy="300" r="20" stroke="#333" fill="white" stroke-width="2"/>
+    <line x1="900" y1="320" x2="900" y2="380" stroke="#333" stroke-width="2"/>
+    <line x1="860" y1="350" x2="940" y2="350" stroke="#333" stroke-width="2"/>
+    <line x1="900" y1="380" x2="860" y2="420" stroke="#333" stroke-width="2"/>
+    <line x1="900" y1="380" x2="940" y2="420" stroke="#333" stroke-width="2"/>
+    <text x="880" y="450" font-family="Arial" font-size="14">System Admin</text>
+  </g>
+
+  <!-- Main System Boundary -->
+  <rect x="200" y="100" width="650" height="600" rx="20" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="420" y="130" font-family="Arial" font-size="18">Booking Management System</text>
+
+  <!-- Subsystem Boundaries -->
+  <!-- Booking Subsystem -->
+  <rect x="220" y="150" width="300" height="250" rx="10" fill="none" stroke="#666" stroke-dasharray="5,5"/>
+  <text x="310" y="175" font-family="Arial" font-size="14" fill="#666">Booking Subsystem</text>
+
+  <!-- Administration Subsystem -->
+  <rect x="530" y="150" width="300" height="250" rx="10" fill="none" stroke="#666" stroke-dasharray="5,5"/>
+  <text x="610" y="175" font-family="Arial" font-size="14" fill="#666">Administration Subsystem</text>
+
+  <!-- Reporting Subsystem -->
+  <rect x="220" y="420" width="610" height="200" rx="10" fill="none" stroke="#666" stroke-dasharray="5,5"/>
+  <text x="470" y="445" font-family="Arial" font-size="14" fill="#666">Reporting Subsystem</text>
+
+  <!-- Use Cases -->
+  <!-- Booking Subsystem Use Cases -->
+  <ellipse cx="320" cy="220" rx="70" ry="25" fill="white" stroke="#333"/>
+  <text x="275" y="225" font-family="Arial" font-size="12">Search Availability</text>
+
+  <ellipse cx="320" cy="290" rx="70" ry="25" fill="white" stroke="#333"/>
+  <text x="285" y="295" font-family="Arial" font-size="12">Make Booking</text>
+
+  <ellipse cx="320" cy="360" rx="70" ry="25" fill="white" stroke="#333"/>
+  <text x="280" y="365" font-family="Arial" font-size="12">Process Payment</text>
+
+  <!-- Administration Subsystem Use Cases -->
+  <ellipse cx="630" cy="220" rx="70" ry="25" fill="white" stroke="#333"/>
+  <text x="580" y="225" font-family="Arial" font-size="12">Manage Resources</text>
+
+  <ellipse cx="630" cy="290" rx="70" ry="25" fill="white" stroke="#333"/>
+  <text x="585" y="295" font-family="Arial" font-size="12">Configure System</text>
+
+  <ellipse cx="630" cy="360" rx="70" ry="25" fill="white" stroke="#333"/>
+  <text x="580" y="365" font-family="Arial" font-size="12">Manage Users</text>
+
+  <!-- Reporting Subsystem Use Cases -->
+  <ellipse cx="320" cy="500" rx="70" ry="25" fill="white" stroke="#333"/>
+  <text x="270" y="505" font-family="Arial" font-size="12">Generate Reports</text>
+
+  <ellipse cx="520" cy="500" rx="70" ry="25" fill="white" stroke="#333"/>
+  <text x="460" y="505" font-family="Arial" font-size="12">Analytics Dashboard</text>
+
+  <ellipse cx="720" cy="500" rx="70" ry="25" fill="white" stroke="#333"/>
+  <text x="670" y="505" font-family="Arial" font-size="12">Export Data</text>
+
+  <!-- Relationships -->
+  <!-- Include relationships -->
+  <dashed-line x1="320" y1="290" x2="320" y2="360" stroke="#333" stroke-dasharray="5,5"/>
+  <text x="330" y="325" font-family="Arial" font-size="10" fill="#666">«include»</text>
+
+  <!-- Extension relationships -->
+  <dashed-line x1="520" y1="500" x2="720" y2="500" stroke="#333" stroke-dasharray="5,5"/>
+  <text x="600" y="485" font-family="Arial" font-size="10" fill="#666">«extend»</text>
+
+  <!-- Actor connections -->
+  <line x1="140" y1="300" x2="250" y2="220" stroke="#333"/>
+  <line x1="140" y1="300" x2="250" y2="290" stroke="#333"/>
+  <line x1="140" y1="300" x2="250" y2="500" stroke="#333"/>
+
+  <line x1="860" y1="300" x2="700" y2="220" stroke="#333"/>
+  <line x1="860" y1="300" x2="700" y2="290" stroke="#333"/>
+  <line x1="860" y1="300" x2="700" y2="360" stroke="#333"/>
+  <line x1="860" y1="300" x2="790" y2="500" stroke="#333"/>
+
+  <!-- System Interface -->
+  <line x1="230" y1="360" x2="150" y2="200" stroke="#333" stroke-dasharray="5,5"/>
+  <text x="160" y="270" font-family="Arial" font-size="10" fill="#666">«interface»</text>
+</svg>
+ booking-system-pro-diagram.svg…]()
+
 
 ### Overview
 Use Case Diagrams are fundamental tools in requirement analysis that visually represent how users (actors) interact with a system. They are part of the Unified Modeling Language (UML) and provide a high-level view of system functionality from an external observer's perspective.
