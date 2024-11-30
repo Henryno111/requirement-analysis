@@ -23,7 +23,7 @@ This repository serves as a comprehensive guide and resource for conducting effe
 ## What is Requirement Analysis?
 Requirement Analysis is a critical phase in software development that focuses on understanding, documenting, and validating the needs and expectations of stakeholders for a software system. It serves as the foundation for successful project delivery by ensuring that all parties have a clear, shared understanding of what the software should accomplish.
 
-## Key Activities
+## KKey Activities in Requirement Analysis
 
 ### 1. Requirement Gathering
 - **Definition**: The systematic collection of requirements from various sources and stakeholders
