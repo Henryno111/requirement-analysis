@@ -158,6 +158,16 @@ FR-003: The system shall automatically log out users after 30 minutes of inactiv
    - Resource expansion
    - System adaptability
 
+---
+
+### Overview
+Use Case Diagrams are fundamental tools in requirement analysis that visually represent how users (actors) interact with a system. They are part of the Unified Modeling Language (UML) and provide a high-level view of system functionality from an external observer's perspective.
+
+### System Architecture Use Case Diagram
+
+### Architectural Components
+
+
 ## Use Case Diagrams
 ![booking-system-pro-diagram](https://github.com/user-attachments/assets/da6a55cb-a029-4290-875b-3a9adec83e44)# Software Development Requirement Analysis
 ![Uploading<svg viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
@@ -265,14 +275,6 @@ FR-003: The system shall automatically log out users after 30 minutes of inactiv
  booking-system-pro-diagram.svg…]()
 
 
-### Overview
-Use Case Diagrams are fundamental tools in requirement analysis that visually represent how users (actors) interact with a system. They are part of the Unified Modeling Language (UML) and provide a high-level view of system functionality from an external observer's perspective.
-
-### System Architecture Use Case Diagram
-[Include the architectural diagram here]
-
-### Architectural Components
-
 #### 1. External Systems Integration
 - Payment Gateway Interface
 - Third-party Service Connectors
@@ -333,6 +335,155 @@ Use Case Diagrams are fundamental tools in requirement analysis that visually re
    - Regular reviews
    - Testing procedures
    - Validation checks
+
+   ---
+
+## Acceptance Criteria
+
+### Definition and Importance
+Acceptance Criteria (AC) are specific conditions that a software product must satisfy to be accepted by a user, customer, or stakeholder. They are a set of statements, each with a clear pass/fail result, that specify both functional and non-functional requirements that must be met to confirm that a user story or feature is complete.
+
+### Key Benefits
+1. **Clear Requirements**
+   - Provides unambiguous definition of done
+   - Eliminates misunderstandings between stakeholders
+   - Sets clear expectations for delivery
+
+2. **Quality Assurance**
+   - Forms the basis for test cases
+   - Ensures consistent testing criteria
+   - Helps identify defects early
+
+3. **Project Management**
+   - Facilitates effort estimation
+   - Helps track progress
+   - Supports sprint planning
+
+### Format and Structure
+Acceptance criteria should follow the SMART framework:
+- **Specific**: Clear and unambiguous
+- **Measurable**: Can be verified
+- **Achievable**: Realistic and possible
+- **Relevant**: Directly related to the requirement
+- **Time-bound**: Can be completed within a sprint/timeline
+
+### Example: Booking System Checkout Feature
+
+#### User Story
+"As a customer, I want to complete my booking payment so that I can confirm my reservation."
+
+#### Acceptance Criteria
+
+1. **Payment Information Entry**
+```gherkin
+Given I am on the checkout page
+When I enter valid payment details (card number, expiry date, CVV)
+Then the system should validate the card information
+And enable the "Confirm Payment" button
+```
+
+2. **Payment Processing**
+```gherkin
+Given I have entered valid payment details
+When I click "Confirm Payment"
+Then the system should process the payment
+And display a loading indicator during processing
+And complete within 30 seconds
+```
+
+3. **Successful Payment**
+```gherkin
+Given the payment has been processed successfully
+Then the system should:
+- Display a success message with booking reference number
+- Send a confirmation email within 5 minutes
+- Redirect to the booking confirmation page
+- Update the booking status to "Confirmed"
+```
+
+4. **Failed Payment**
+```gherkin
+Given the payment process has failed
+Then the system should:
+- Display an error message with specific reason
+- Retain the entered booking details
+- Provide option to retry payment
+- Show alternative payment methods
+```
+
+5. **Security Requirements**
+```gherkin
+Given I am making a payment
+Then the system must:
+- Use SSL encryption for data transmission
+- Not store complete credit card numbers
+- Mask the credit card number except last 4 digits
+- Comply with PCI DSS requirements
+```
+
+6. **Payment Validation**
+```gherkin
+The system must validate:
+- Card number using Luhn algorithm
+- Expiry date is not in the past
+- CVV is 3-4 digits
+- Billing address matches card details
+```
+
+7. **Booking Timeout**
+```gherkin
+Given I am on the checkout page
+When I don't complete payment within 15 minutes
+Then the system should:
+- Release the reserved booking slot
+- Display timeout message
+- Redirect to booking page
+```
+
+### Writing Effective Acceptance Criteria
+
+1. **Use Simple Language**
+   - Write in non-technical terms
+   - Be clear and concise
+   - Avoid ambiguous language
+
+2. **Focus on End-User Value**
+   - Describe the what, not the how
+   - Define user-visible outcomes
+   - Include business rules
+
+3. **Be Testable**
+   - Write measurable criteria
+   - Include specific values
+   - Define clear pass/fail conditions
+
+4. **Cover All Scenarios**
+   - Happy path
+   - Error conditions
+   - Edge cases
+   - Performance requirements
+
+### Implementation Guidelines
+
+1. **Documentation**
+   - Document AC before development starts
+   - Include AC in user story cards
+   - Maintain traceability to requirements
+
+2. **Review Process**
+   - Review with stakeholders
+   - Get sign-off from product owner
+   - Update based on feedback
+
+3. **Testing Alignment**
+   - Use AC to create test cases
+   - Automate acceptance tests where possible
+   - Include AC in test documentation
+
+4. **Monitoring and Updates**
+   - Track AC completion status
+   - Update AC as requirements change
+   - Document deviations and exceptions
 
 ## Tools and Techniques
 
